@@ -5,6 +5,10 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
 ## Running the application in dev mode
+First run the postgres instance using Docker
+```shell script
+docker run --name my_db -e POSTGRES_USER=username -e POSTGRES_PASSWORD=password -e POSTGRES_DB=my_db -p 5432:5432 postgres:10.5
+```
 
 You can run your application in dev mode that enables live coding using:
 ```shell script
