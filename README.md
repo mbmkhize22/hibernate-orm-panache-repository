@@ -63,5 +63,6 @@ If you want to learn more about building native executables, please consult http
 
 Easily start your RESTful Web Services
 
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
-[Reference](https://www.youtube.com/watch?v=zs8aN5g0lr0)
+- [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+- [Youtube Reference](https://www.youtube.com/watch?v=zs8aN5g0lr0)
+- [JPA JOIN](https://www.youtube.com/watch?v=8qhaDBCJh6I&t=7s)
