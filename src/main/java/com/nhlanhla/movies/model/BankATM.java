@@ -6,15 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Data
+/*@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Entity
+@Entity*/
 public class BankATM {
-    @Id
-    @GeneratedValue
+    //@Id
+    //@GeneratedValue
     private Long atmId;
     private String atmName;
 }

@@ -1,5 +1,6 @@
 package com.nhlanhla.college.resources;
 
+import com.nhlanhla.college.dto.CourseInput;
 import com.nhlanhla.college.model.Course;
 import com.nhlanhla.college.repository.CourseRepository;
 import com.nhlanhla.movies.model.BankATM;
@@ -11,9 +12,11 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Path("/api/course/v1")
 public class CourseResource {
+    Logger LOG = Logger.getLogger(CourseResource.class.getName());
 
     @Inject
     CourseRepository courseRepository;
@@ -34,12 +37,19 @@ public class CourseResource {
 
     @POST
     @Transactional
-    public Response create(Course u) {
-        courseRepository.persist(u);
-        if(courseRepository.isPersistent(u)) {
-            return Response.created(URI.create("created")).build();
+    public Response create(Course cu) {
+        try {
+            LOG.info(cu.toString());
+            courseRepository.persist(cu);
+            courseRepository.flush();
+            if (courseRepository.isPersistent(cu)) {
+                return Response.created(URI.create("created")).build();
+            }
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }catch (Exception ee) {
+            LOG.severe(ee.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.status(Response.Status.BAD_REQUEST).build();
     }
 
     @DELETE

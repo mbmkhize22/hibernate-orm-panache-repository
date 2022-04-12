@@ -5,19 +5,19 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Collection;
 
-@Data
+/*@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Entity
+@Entity*/
 public class LeproTaskOne {
-    @Id
-    @GeneratedValue
+    //@Id
+    //@GeneratedValue
     private Long taskId;
     private String taskName;
 
-    @OneToMany(targetEntity = BankATM.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "bank_task_fk", referencedColumnName = "taskId")
+    //@OneToMany(targetEntity = BankATM.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@JoinColumn(name = "bank_task_fk", referencedColumnName = "taskId")
     private Collection<BankATM> bankATMS;
 }

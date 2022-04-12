@@ -6,15 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Data
+/*@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Entity
+@Entity*/
 public class LeproUser {
-    @Id
-    @GeneratedValue
+    //@Id
+    //@GeneratedValue
     private Long leproUserId;
     private String fullName;
 }
